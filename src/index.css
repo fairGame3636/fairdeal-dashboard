@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+/* --- DEFAULT STYLES (This will be your Dark Theme) --- */
+:root {
+  --background-color: #f0f2f5; /* A light grey for the page background */
+  --content-bg-color: #ffffff; /* White for the main report box */
+  --text-color: #ffffff;      /* Dark grey for text */
+  --button-bg-color: #343a40; /* Dark color for buttons */
+  --button-text-color: #ffffff;/* White for button text */
+  --placeholder-color: #a0a0a0;/* A light grey for placeholders */
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a; /* Dark mode button */
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+/* --- LIGHT THEME OVERRIDES --- */
+@media (prefers-color-scheme: light) {
+  :root {
+    /* Light mode colors */
+    color: #213547;
+    background-color: #ffffff; /* This correctly changes the entire page background */
+  }
+
+  button {
+    background-color: #f9f9f9; /* Light mode button */
+  }
+}
+
+/* (No extra body rule needed here!) */

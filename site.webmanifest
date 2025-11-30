@@ -1,0 +1,55 @@
+{
+    "name": "FairDeal Casino Games",
+    "short_name": "FairDeal",
+    "description": "Premium casino gaming experience - Play for free!",
+    "start_url": "/",
+    "display": "fullscreen",
+    "orientation": "landscape-primary",
+    "theme_color": "#131638",
+    "background_color": "#000000",
+    "scope": "/",
+    "lang": "en",
+    "categories": [
+        "games",
+        "entertainment"
+    ],
+    "icons": [
+        {
+            "src": "/logo192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable any"
+        },
+        {
+            "src": "/logo512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable any"
+        },
+        {
+            "src": "/logo192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/logo512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "shortcuts": [
+        {
+            "name": "Quick Play",
+            "short_name": "Play",
+            "description": "Jump straight into the game",
+            "url": "/login",
+            "icons": [
+                {
+                    "src": "/logo192.png",
+                    "sizes": "192x192"
+                }
+            ]
+        }
+    ],
+    "prefer_related_applications": false
+}
