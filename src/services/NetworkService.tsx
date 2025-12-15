@@ -13,6 +13,15 @@ class NetworkService {
     static async request<T>(config: AxiosRequestConfig): Promise<ApiResponse<T>> {
         try {
             const response: AxiosResponse<any> = await this.axiosInstance.request(config);
+
+            if (config.responseType === 'blob') {
+                return {
+                    success: true,
+                    message: 'File downloaded successfully',
+                    data: response.data as T,
+                };
+            }
+            
             return {
                 success: true,
                 message: response.data.message || 'Request successful',
@@ -44,7 +53,7 @@ class NetworkService {
 
     static async privateRequest<T>(config: AxiosRequestConfig): Promise<ApiResponse<T>> {
         const token = localStorage.getItem('authToken');
-        
+
         if (!token) {
             console.error("Authentication token not found.");
             return {

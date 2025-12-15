@@ -13,16 +13,18 @@ const gameNames = ['All', 'Teen Patti', 'Andar Bahar', 'Roulette', 'Blackjack'];
 // --- Helper functions ---
 const downloadFile = (blob: Blob, filename: string) => {
     try {
-        const url = window.URL.createObjectURL(new Blob([blob]));
+        const url = window.URL.createObjectURL(blob); // ✅ USE DIRECTLY
         const link = document.createElement('a');
         link.href = url;
-        link.setAttribute('download', filename);
+        link.download = filename;
+
         document.body.appendChild(link);
         link.click();
-        link.parentNode?.removeChild(link);
+
+        document.body.removeChild(link);
         window.URL.revokeObjectURL(url);
     } catch (error) {
-        console.error("Error downloading file:", error);
+        console.error('Error downloading file:', error);
     }
 };
 

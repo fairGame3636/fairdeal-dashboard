@@ -141,6 +141,7 @@ class ReportService {
             url: APIEndpoints.Report.GAME_HISTORY,
             data: { ...exportParams, export: true },
             responseType: 'blob',
+            timeout: 120000,
         });
 
         if (!response || !response.data) {
